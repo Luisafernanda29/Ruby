@@ -1,0 +1,21 @@
+<h1>Persona</h1>
+
+<dl>
+    <dt>Identificacion</dt>
+    <dd><%= @person.identificacion %></dd>
+    <dt>Nombre</dt>
+    <dd><%= @person.nombre %></dd>
+    <dt>Apellido</dt>
+    <dd><%=@person.apellido %></dd>
+    <dt>Correo</dt>
+    <dd><%=@person.correo %></dd>
+    <dt>Telefono</dt>
+    <dd><%=@person.telefono %></dd>
+</dl>
+ 
+<%= image_tag @person.avatar_url if @person.avatar? %>
+<hr>
+
+<%= link_to "Lista de personas", people_path %> |
+<%= link_to "Editar", edit_person_path(@person) %> |
+<%= link_to "Eliminar", person_path(@person), method: :delete %>
